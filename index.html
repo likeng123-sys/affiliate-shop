@@ -147,27 +147,7 @@
   </section>
 
   <!-- Product Showcase -->
-  <section class="products" id="product-list">
-    <!-- Default IT Gadgets -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Product">
-      <h3>Wireless Earbuds</h3>
-      <p>High-quality sound with noise cancellation.</p>
-      <a href="https://myaffiliatelink.com/product1" target="_blank">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Product">
-      <h3>Smartwatch Pro</h3>
-      <p>Track fitness, calls, and notifications easily.</p>
-      <a href="https://myaffiliatelink.com/product2" target="_blank">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Product">
-      <h3>Gaming Mouse</h3>
-      <p>Ergonomic design with RGB lighting.</p>
-      <a href="https://myaffiliatelink.com/product3" target="_blank">Buy Now</a>
-    </div>
-  </section>
+  <section class="products" id="product-list"></section>
 
   <!-- Testimonials -->
   <section class="testimonials">
@@ -189,29 +169,29 @@
   <script>
     const categories = {
       gadgets: [
-        {name:"Wireless Earbuds",desc:"High-quality sound with noise cancellation.",link:"https://myaffiliatelink.com/product1"},
-        {name:"Smartwatch Pro",desc:"Track fitness, calls, and notifications easily.",link:"https://myaffiliatelink.com/product2"},
-        {name:"Gaming Mouse",desc:"Ergonomic design with RGB lighting.",link:"https://myaffiliatelink.com/product3"},
+        {name:"Wireless Earbuds",desc:"High-quality sound with noise cancellation.",link:"https://myaffiliatelink.com/product1", img:"images/earbuds.jpg"},
+        {name:"Smartwatch Pro",desc:"Track fitness, calls, and notifications easily.",link:"https://myaffiliatelink.com/product2", img:"images/smartwatch.jpg"},
+        {name:"Gaming Mouse",desc:"Ergonomic design with RGB lighting.",link:"https://myaffiliatelink.com/product3", img:"images/mouse.jpg"},
       ],
       travel: [
-        {name:"Travel Backpack",desc:"Durable, waterproof and stylish.",link:"https://myaffiliatelink.com/product4"},
-        {name:"4-Wheel Suitcase",desc:"Lightweight with TSA lock.",link:"https://myaffiliatelink.com/product5"},
-        {name:"Neck Pillow",desc:"Memory foam comfort for flights.",link:"https://myaffiliatelink.com/product6"},
+        {name:"Travel Backpack",desc:"Durable, waterproof and stylish.",link:"https://myaffiliatelink.com/product4", img:"images/backpack.jpg"},
+        {name:"4-Wheel Suitcase",desc:"Lightweight with TSA lock.",link:"https://myaffiliatelink.com/product5", img:"images/suitcase.jpg"},
+        {name:"Neck Pillow",desc:"Memory foam comfort for flights.",link:"https://myaffiliatelink.com/product6", img:"images/pillow.jpg"},
       ],
       home: [
-        {name:"Air Fryer",desc:"Cook healthy meals with little oil.",link:"https://myaffiliatelink.com/product7"},
-        {name:"Robot Vacuum",desc:"Cleans your floor automatically.",link:"https://myaffiliatelink.com/product8"},
-        {name:"Coffee Maker",desc:"Fresh coffee at the touch of a button.",link:"https://myaffiliatelink.com/product9"},
+        {name:"Air Fryer",desc:"Cook healthy meals with little oil.",link:"https://myaffiliatelink.com/product7", img:"images/airfryer.jpg"},
+        {name:"Robot Vacuum",desc:"Cleans your floor automatically.",link:"https://myaffiliatelink.com/product8", img:"images/vacuum.jpg"},
+        {name:"Coffee Maker",desc:"Fresh coffee at the touch of a button.",link:"https://myaffiliatelink.com/product9", img:"images/coffeemaker.jpg"},
       ],
       fashion: [
-        {name:"Leather Wallet",desc:"Premium quality slim wallet.",link:"https://myaffiliatelink.com/product10"},
-        {name:"Smart Sunglasses",desc:"UV protection with built-in speakers.",link:"https://myaffiliatelink.com/product11"},
-        {name:"Running Shoes",desc:"Lightweight and durable sports shoes.",link:"https://myaffiliatelink.com/product12"},
+        {name:"Leather Wallet",desc:"Premium quality slim wallet.",link:"https://myaffiliatelink.com/product10", img:"images/wallet.jpg"},
+        {name:"Smart Sunglasses",desc:"UV protection with built-in speakers.",link:"https://myaffiliatelink.com/product11", img:"images/sunglasses.jpg"},
+        {name:"Running Shoes",desc:"Lightweight and durable sports shoes.",link:"https://myaffiliatelink.com/product12", img:"images/shoes.jpg"},
       ],
       health: [
-        {name:"Yoga Mat",desc:"Non-slip mat for all workouts.",link:"https://myaffiliatelink.com/product13"},
-        {name:"Massage Gun",desc:"Relieve muscle soreness instantly.",link:"https://myaffiliatelink.com/product14"},
-        {name:"Vitamin C Supplement",desc:"Boost your immune system daily.",link:"https://myaffiliatelink.com/product15"},
+        {name:"Yoga Mat",desc:"Non-slip mat for all workouts.",link:"https://myaffiliatelink.com/product13", img:"images/yogamat.jpg"},
+        {name:"Massage Gun",desc:"Relieve muscle soreness instantly.",link:"https://myaffiliatelink.com/product14", img:"images/massagegun.jpg"},
+        {name:"Vitamin C Supplement",desc:"Boost your immune system daily.",link:"https://myaffiliatelink.com/product15", img:"images/vitaminc.jpg"},
       ]
     };
 
@@ -221,15 +201,17 @@
       event.target.classList.add('active');
       productList.innerHTML = categories[cat].map(p => `
         <div class="product-card">
-          <img src="https://via.placeholder.com/300x200" alt="${p.name}">
+          <img src="${p.img}" alt="${p.name}">
           <h3>${p.name}</h3>
           <p>${p.desc}</p>
           <a href="${p.link}" target="_blank">Buy Now</a>
         </div>
       `).join('');
     }
+
+    // Load default category
+    showCategory('gadgets');
   </script>
 
 </body>
 </html>
-
