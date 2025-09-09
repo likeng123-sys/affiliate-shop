@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Deals</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9fb;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #4f46e5, #6d28d9);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #4f46e5;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ddd;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 1rem;
+    }
+    nav button {
+      background: #e0e7ff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav button.active, nav button:hover {
+      background: #4f46e5;
+      color: #fff;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .product-card h3 {
+      margin: 0.5rem 0;
+    }
+    .product-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .product-card a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.6rem 1.2rem;
+      background: #4f46e5;
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .product-card a:hover {
+      background: #4338ca;
+    }
+    .testimonials {
+      background: #f3f4f6;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-style: italic;
+      color: #444;
+    }
+    footer {
+      background: #1f2937;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    footer a {
+      color: #9ca3af;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Discover the Best Deals Online</h1>
+    <p>Save money with curated affiliate deals across top categories.</p>
+    <a href="#categories" class="btn">Start Shopping</a>
+  </header>
+
+  <!-- Categories -->
+  <section id="categories">
+    <nav>
+      <button class="active" onclick="showCategory('gadgets')">IT Gadgets</button>
+      <button onclick="showCategory('travel')">Travel & Luggage</button>
+      <button onclick="showCategory('home')">Home & Kitchen</button>
+      <button onclick="showCategory('fashion')">Fashion & Accessories</button>
+      <button onclick="showCategory('health')">Health & Wellness</button>
+    </nav>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="products" id="product-list">
+    <!-- Default IT Gadgets -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product">
+      <h3>Wireless Earbuds</h3>
+      <p>High-quality sound with noise cancellation.</p>
+      <a href="https://myaffiliatelink.com/product1" target="_blank">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product">
+      <h3>Smartwatch Pro</h3>
+      <p>Track fitness, calls, and notifications easily.</p>
+      <a href="https://myaffiliatelink.com/product2" target="_blank">Buy Now</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product">
+      <h3>Gaming Mouse</h3>
+      <p>Ergonomic design with RGB lighting.</p>
+      <a href="https://myaffiliatelink.com/product3" target="_blank">Buy Now</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <p class="testimonial">"Amazing deals! Saved so much money buying my new gadgets here." – Alex</p>
+    <p class="testimonial">"Easy to use site, and the products are exactly as described." – Sarah</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <a href="#">About Us</a> | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Contact</a>
+    </p>
+    <p>&copy; 2025 My Affiliate Shop</p>
+  </footer>
+
+  <script>
+    const categories = {
+      gadgets: [
+        {name:"Wireless Earbuds",desc:"High-quality sound with noise cancellation.",link:"https://myaffiliatelink.com/product1"},
+        {name:"Smartwatch Pro",desc:"Track fitness, calls, and notifications easily.",link:"https://myaffiliatelink.com/product2"},
+        {name:"Gaming Mouse",desc:"Ergonomic design with RGB lighting.",link:"https://myaffiliatelink.com/product3"},
+      ],
+      travel: [
+        {name:"Travel Backpack",desc:"Durable, waterproof and stylish.",link:"https://myaffiliatelink.com/product4"},
+        {name:"4-Wheel Suitcase",desc:"Lightweight with TSA lock.",link:"https://myaffiliatelink.com/product5"},
+        {name:"Neck Pillow",desc:"Memory foam comfort for flights.",link:"https://myaffiliatelink.com/product6"},
+      ],
+      home: [
+        {name:"Air Fryer",desc:"Cook healthy meals with little oil.",link:"https://myaffiliatelink.com/product7"},
+        {name:"Robot Vacuum",desc:"Cleans your floor automatically.",link:"https://myaffiliatelink.com/product8"},
+        {name:"Coffee Maker",desc:"Fresh coffee at the touch of a button.",link:"https://myaffiliatelink.com/product9"},
+      ],
+      fashion: [
+        {name:"Leather Wallet",desc:"Premium quality slim wallet.",link:"https://myaffiliatelink.com/product10"},
+        {name:"Smart Sunglasses",desc:"UV protection with built-in speakers.",link:"https://myaffiliatelink.com/product11"},
+        {name:"Running Shoes",desc:"Lightweight and durable sports shoes.",link:"https://myaffiliatelink.com/product12"},
+      ],
+      health: [
+        {name:"Yoga Mat",desc:"Non-slip mat for all workouts.",link:"https://myaffiliatelink.com/product13"},
+        {name:"Massage Gun",desc:"Relieve muscle soreness instantly.",link:"https://myaffiliatelink.com/product14"},
+        {name:"Vitamin C Supplement",desc:"Boost your immune system daily.",link:"https://myaffiliatelink.com/product15"},
+      ]
+    };
+
+    function showCategory(cat) {
+      const productList = document.getElementById('product-list');
+      document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+      event.target.classList.add('active');
+      productList.innerHTML = categories[cat].map(p => `
+        <div class="product-card">
+          <img src="https://via.placeholder.com/300x200" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <a href="${p.link}" target="_blank">Buy Now</a>
+        </div>
+      `).join('');
+    }
+  </script>
+
+</body>
+</html>
 
